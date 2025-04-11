@@ -27,7 +27,7 @@ app.config["UPLOAD_FOLDER"] = "./static/img"
 # }]
 app.config["MONGODB_SETTINGS"] = [{
     "db": "GestionPeliculas",
-    "host": os.getenv("//carlospalechor211:Ff7RNy6IPeDHZeGP@cluster0.mcui333.mongodb.net/GestionPeliculas?"),
+    "host": os.getenv("MONGO_URI"),
     "port": 27017
 }]
 
