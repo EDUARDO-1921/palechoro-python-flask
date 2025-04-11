@@ -1,59 +1,5 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-<style>
-    body {
-        background-color: #f4f6f9;
-    }
-
-    h2 {
-        text-align: center;
-        margin-bottom: 25px;
-        color: #343a40;
-        font-weight: bold;
-    }
-
-    form {
-        background: #ffffff;
-        max-width: 700px;
-        margin: 50px auto;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    label {
-        font-weight: 600;
-        color: #495057;
-    }
-
-    .form-control {
-        border-radius: 8px;
-        border: 1px solid #ced4da;
-        padding: 10px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .form-control:focus {
-        border-color: #0d6efd;
-        box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
-    }
-
-    .btn {
-        width: 49%;
-        border-radius: 8px;
-        padding: 10px;
-        font-weight: bold;
-        font-size: 16px;
-    }
-
-    #alert-container {
-        margin-top: 20px;
-        text-align: center;
-    }
-</style>
-
 <h2>Agregar Película</h2>
 <form id="formPelicula" method="POST" action="/agregarpelicula/">
   <div class="form-group">
@@ -87,9 +33,9 @@
       {% for genero in generos %}
           <option value="{{ genero.id }}">{{ genero.nombre }}</option>
       {% endfor %}
-    </select>
+  </select>
+  
   </div>
-  <br>
   <button type="submit" class="btn btn-primary">Guardar Película</button>
   <button type="reset" class="btn btn-danger">Cancelar</button>
 </form>

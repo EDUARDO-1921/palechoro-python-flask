@@ -1,108 +1,21 @@
+
 {% extends 'base.html' %}
 
-{% block title %}Iniciar Sesión{% endblock %}
-
 {% block content %}
-
-<style>
-    body {
-        background-color: #f4f6f9;
-    }
-
-    .container {
-        max-width: 400px;
-        margin-top: 80px;
-        background-color: #ffffff;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-
-    h2 {
-        margin-bottom: 25px;
-        font-weight: bold;
-        color: #343a40;
-    }
-
-    input[type="text"],
-    input[type="password"] {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border-radius: 8px;
-        border: 1px solid #ced4da;
-        transition: all 0.3s ease-in-out;
-    }
-
-    input[type="text"]:focus,
-    input[type="password"]:focus {
-        border-color: #0d6efd;
-        box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
-    }
-
-    button {
-        width: 100%;
-        padding: 10px;
-        background-color: #198754;
-        border: none;
-        border-radius: 8px;
-        color: #ffffff;
-        font-weight: bold;
-        transition: 0.3s;
-    }
-
-    button:hover {
-        background-color: #157347;
-    }
-
-    p {
-        margin-top: 15px;
-        font-size: 14px;
-    }
-
-    a {
-        color: #0d6efd;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    .g-recaptcha {
-        margin: 15px 0;
-    }
-
-    .mensaje-error {
-        color: red;
-        font-weight: bold;
-        margin-top: 10px;
-    }
-</style>
-
 <div class="container">
-    <h2>Iniciar Sesión</h2>
-
+    <h2>Iniciar sesion</h2>
     <form method="POST" action="/">
-        <input type="text" name="usuario" placeholder="Usuario" required>
-        <input type="password" name="clave" placeholder="Contraseña" required>
-
-        <div class="g-recaptcha" data-sitekey="6Le4xhQrAAAAAL-JEQ1AQSpEu7PhKRbKD_Jh-CEt"></div>
-
-        <button type="submit">Entrar</button>
+        <input type="text" name="usuario" placeholder="Usuario" required><br><br>
+        <input type="password" name="clave" placeholder="Contraseña" required><div><form>
+            <div class="g-recaptcha" data-sitekey="6Le4xhQrAAAAAL-JEQ1AQSpEu7PhKRbKD_Jh-CEt"></div><br>
+            <button type="submit">Entrar</button>
     </form>
-
-    <p>¿Olvidaste tu contraseña? <a href="/recuperar">Recupérala aquí</a></p>
-
+    <p>Recuperar contraseña <a href="/recuperar">Aqui</a> </p>
     {% with mensajes = get_flashed_messages() %}
         {% if mensajes %}
-            <p class="mensaje-error">{{ mensajes[0] }}</p>
+            <p style="color:red;">{{ mensajes[0] }}</p>
         {% endif %}
     {% endwith %}
 </div>
-
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 {% endblock %}
