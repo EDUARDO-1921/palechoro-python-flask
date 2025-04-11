@@ -13,7 +13,7 @@ def login():
         usuario_input = request.form['usuario']
         contrasena_input = request.form['clave']
         captcha_response = request.form['g-recaptcha-response']
-        secret_key = "6LenzQ8rAAAAAOAE53gA8-09eiNKNCeStee2Nez-"
+        secret_key = "6Le4xhQrAAAAAKWLAocYoxysW7EEVxjYGsd3yji1"
         captcha_verify_url = "https://www.google.com/recaptcha/api/siteverify"
         payload = {'secret': secret_key, 'response': captcha_response}
         captcha_verification = requests.post(captcha_verify_url, data=payload).json()

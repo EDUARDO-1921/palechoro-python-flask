@@ -6,7 +6,7 @@ import os
 from dotenv import load_dotenv
 from flask_mail import Mail, Message
 app = Flask(__name__)  
-app.config['SECRET_KEY'] = 'darwin'
+app.config['SECRET_KEY'] = 'carlospalechor'
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
@@ -20,11 +20,6 @@ mail = Mail(app)
 
 CORS(app)
 app.config["UPLOAD_FOLDER"] = "./static/img"
-# app.config["MONGODB_SETTINGS"] = [{
-#     "db": "GestionPeliculas",
-#     "host": "mongodb+srv://dstevengmz1293:<db_password>@cluster0.6jt6j.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-#     "port": 27017
-# }]
 app.config["MONGODB_SETTINGS"] = [{
     "db": "GestionPeliculas",
     "host": os.getenv("MONGO_URI"),
