@@ -1,13 +1,27 @@
-{% extends 'base.html' %} {% block content %}
-<h2>Lista de genero</h2>
-<h1>Editar Género</h1>
+{% extends 'base.html' %}
 
-<form method="POST">
-    <label for="nombre">Nombre del Género:</label>
-    <input type="text" name="nombre" value="{{ genero.nombre }}" required>
-    <button type="submit">Actualizar Género</button>
-</form>
+{% block title %}Editar Género{% endblock %}
 
-<br>
-<a href="{{ url_for('listGenero') }}">Volver a la lista de géneros</a>
+{% block content %}
+
+<div class="container mt-5">
+  <div class="card shadow-lg p-4">
+
+    <h2 class="text-center mb-4 fw-bold text-primary">Editar Género</h2>
+
+    <form method="POST">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre del Género</label>
+        <input type="text" name="nombre" class="form-control" value="{{ genero.nombre }}" required>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-success w-45">Actualizar Género</button>
+        <a href="{{ url_for('listGenero') }}" class="btn btn-danger w-45">Cancelar</a>
+      </div>
+    </form>
+
+  </div>
+</div>
+
 {% endblock %}

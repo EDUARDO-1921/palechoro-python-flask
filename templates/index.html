@@ -1,4 +1,31 @@
 {% extends 'base.html' %}
+
+{% block title %}Inicio{% endblock %}
+
 {% block content %}
-<p>Bienvenido a la aplicación de gestión de géneros.</p>
+
+<style>
+  .bienvenida {
+    background-color: #ffffff;
+    padding: 40px;
+    margin-top: 100px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 25px;
+    color: #343a40;
+    font-weight: bold;
+  }
+
+  body {
+    background-color: #f4f6f9;
+  }
+</style>
+
+<div class="container">
+  <div class="bienvenida">
+    <p>Bienvenido a la aplicación de gestión de géneros.</p>
+  </div>
+</div>
+
 {% endblock %}
